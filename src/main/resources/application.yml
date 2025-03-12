@@ -16,15 +16,14 @@ spring:
         #   predicates:
         #     - Path=/emp/**
         #   filters:
-        #     - RewritePath=/emp/(?<segment>.*), /myApplication/emp/${segment}  # ✅ Ensures correct mapping
+        #     - RewritePath=/emp/(?<segment>.*), /myApplication/emp/${segment}  
 
         # - id: user-service  # ✅ Fixed ID name
         #   uri: http://localhost:8090/
         #   predicates:
         #     - Path=/api/**
         #   filters:
-        #     - RewritePath=/api/(?<segment>.*), /myApplication/api/${segment}  # ✅ Ensures correct mapping
-
+        #     - RewritePath=/api/(?<segment>.*), /myApplication/api/${segment}  
         - id: student-service  # ✅ Fixed ID name
           uri: http://localhost:8081/
           predicates:
