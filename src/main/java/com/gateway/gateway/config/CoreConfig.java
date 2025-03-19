@@ -17,7 +17,7 @@ public class CoreConfig {
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
-
+        System.out.println("core configration");
         config.setAllowCredentials(true);
         config.addAllowedOrigin(allowedOrigins); // React frontend
         config.addAllowedHeader("*");
