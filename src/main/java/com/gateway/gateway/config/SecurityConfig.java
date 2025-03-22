@@ -44,27 +44,29 @@ public class SecurityConfig {
         return authenticationConfiguration.getAuthenticationManager();
     }
 
-    @Bean
-    public CorsFilter corsFilter() {
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        CorsConfiguration config = new CorsConfiguration();
-        // Allow frontend origin (Modify if deployed to another domain)
-        config.setAllowedOrigins(List.of("http://localhost:3000"));
+    // @Bean
+    // public CorsFilter corsFilter() {
+    // UrlBasedCorsConfigurationSource source = new
+    // UrlBasedCorsConfigurationSource();
+    // CorsConfiguration config = new CorsConfiguration();
+    // // Allow frontend origin (Modify if deployed to another domain)
+    // config.setAllowedOrigins(List.of("http://localhost:3000"));
 
-        // Allow necessary HTTP methods
-        config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+    // // Allow necessary HTTP methods
+    // config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 
-        // Allow all common headers including Authorization
-        config.setAllowedHeaders(List.of("Authorization", "Content-Type", "Accept", "Origin"));
+    // // Allow all common headers including Authorization
+    // config.setAllowedHeaders(List.of("Authorization", "Content-Type", "Accept",
+    // "Origin"));
 
-        // Expose Authorization header so frontend can access it
-        config.setExposedHeaders(List.of("Authorization"));
+    // // Expose Authorization header so frontend can access it
+    // config.setExposedHeaders(List.of("Authorization"));
 
-        config.setAllowCredentials(true);
+    // config.setAllowCredentials(true);
 
-        source.registerCorsConfiguration("/**", config);
+    // source.registerCorsConfiguration("/**", config);
 
-        return new CorsFilter(source);
-    }
+    // return new CorsFilter(source);
+    // }
 
 }

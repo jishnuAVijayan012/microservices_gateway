@@ -3,6 +3,9 @@ server:
 cors:
   allowed-origins: "http://localhost:3000"
 
+jwt:
+  secret : alRON6DZN8VomobLpaAel08BOfBHXS5rdeSQwbemMiM=
+
 spring:
   application:
     name: Gateway  # ✅ Fixed indentation
@@ -24,10 +27,15 @@ spring:
         #     - Path=/api/**
         #   filters:
         #     - RewritePath=/api/(?<segment>.*), /myApplication/api/${segment}  
-        - id: student-service  # ✅ Fixed ID name
+        # - id: student-service  # ✅ Fixed ID name
+        #   uri: http://localhost:8081/
+        #   predicates:
+        #     - Path=/api/**
+            
+        - id: auth-service  # ✅ Fixed ID name
           uri: http://localhost:8081/
           predicates:
-            - Path=/api/**
+            - Path=/auth/**
     
         
               
